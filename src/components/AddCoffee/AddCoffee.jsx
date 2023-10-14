@@ -48,7 +48,14 @@ export default function AddCoffee() {
             body: JSON.stringify(newCoffee)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data.acknowledged) {
+                alert("Coffee Added")
+            }
+            else {
+                alert("Failed")
+            }
+            console.log(data)})
 
         // Reset form
         // form.reset();
