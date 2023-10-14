@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 
 
 export default function AddCoffee() {
@@ -34,6 +35,20 @@ export default function AddCoffee() {
         console.log(category)
         console.log(details)
         console.log(photo)
+
+        // coffee object
+        const newCoffee = {name,chef,supplier,taste,category,details,photo}
+        console.log(newCoffee)
+
+        fetch('http://localhost:5000/addCoffee', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newCoffee)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
 
         // Reset form
         // form.reset();
