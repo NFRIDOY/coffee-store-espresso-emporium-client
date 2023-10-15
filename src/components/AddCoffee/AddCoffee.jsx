@@ -20,7 +20,7 @@ export default function AddCoffee() {
         const form = e.target;
 
         const name = form.Name.value;
-        const chef = form.Chef.value;
+        const quantity = form.Quantity.value; // Should Be A number but string
         const supplier = form.Supplier.value;
         const taste = form.Taste.value;
         const category = form.Category.value;
@@ -29,7 +29,7 @@ export default function AddCoffee() {
         
         // Output
         console.log(name)
-        console.log(chef)
+        console.log(quantity)
         console.log(supplier)
         console.log(taste)
         console.log(category)
@@ -37,7 +37,7 @@ export default function AddCoffee() {
         console.log(photo)
 
         // coffee object
-        const newCoffee = {name,chef,supplier,taste,category,details,photo}
+        const newCoffee = {name,quantity,supplier,taste,category,details,photo}
         console.log(newCoffee)
 
         fetch('http://localhost:5000/addCoffee', {
@@ -74,8 +74,8 @@ export default function AddCoffee() {
                             <input type="text" className="p-4 rounded-md w-full md:w-11/12  mr-0 " name="Name" placeholder="Name" />
                         </div>
                         <div className="flex flex-col items-start w-full gap-3">
-                            <label>Chef</label>
-                            <input type="text" className="p-4 rounded-md w-full md:w-11/12  mr-0" name="Chef" placeholder="Chef" />
+                            <label>Quantity</label>
+                            <input type="text" className="p-4 rounded-md w-full md:w-11/12  mr-0" name="Quantity" placeholder="Quantity" />
                         </div>
                         <div className="flex flex-col items-start w-full gap-3">
                             <label>Supplier</label>
